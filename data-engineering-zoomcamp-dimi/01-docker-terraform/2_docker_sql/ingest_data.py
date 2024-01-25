@@ -16,7 +16,6 @@ def main(params):
     db = params.db
     table_name = params.table_name
     url = params.url
-    csv_name = 'output.csv'
 
     # the backup files are gzipped, and it's important to keep the correct extension
     # for pandas to be able to open the file
