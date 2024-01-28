@@ -1,15 +1,20 @@
-my homework answers code
+# my homework answers code
 
-# Q1.
+## Q1.
+```
 docker run --help
+```
 
-# Q2.
+## Q2.
 
+```
 docker run -it --entrypoint=bash python:3.9
 pip list
+```
 
-# Q3.
+## Q3.
 
+```
 SELECT
 	CAST(lpep_pickup_datetime AS DATE),
 	CAST(lpep_dropoff_datetime AS DATE),
@@ -23,9 +28,11 @@ WHERE
 GROUP BY
 	CAST(lpep_pickup_datetime AS DATE),
 	CAST(lpep_dropoff_datetime AS DATE);
+```
 
-# Q4.
+## Q4.
 
+```
 SELECT
 	CAST(lpep_pickup_datetime AS DATE),
 	MAX(trip_distance)
@@ -35,9 +42,11 @@ GROUP BY
 	CAST(lpep_pickup_datetime AS DATE)
 ORDER BY
 	MAX(trip_distance) DESC;
+```
 
-# Q5.
+## Q5.
 
+```
 SELECT
 	SUM(total_amount),
 	CAST(lpep_pickup_datetime AS DATE),
@@ -53,10 +62,12 @@ GROUP BY
 	zpu."Borough"
 ORDER BY
 	SUM(total_amount) DESC;
+```
 
-# Q6.
+## Q6.
 
-## one query
+### one query
+```
 SELECT
 	zpu."Zone",
 	MAX(tip_amount) AS max_tip_amount,
@@ -74,18 +85,22 @@ GROUP BY
 ORDER BY
 	MAX(tip_amount) DESC
 LIMIT 1;
+```
 
-## another query
+### another query
 
+```
 SELECT
 	"Zone"
 FROM
 	zones
 WHERE
 	"LocationID" = 132;
+```
 
-## alternative solution IN ONE query:
+### alternative solution IN ONE query:
 
+```
 SELECT
 	zpu2."Zone",
 	MAX(tip_amount) AS max_tip_amount,
@@ -105,11 +120,13 @@ GROUP BY
 ORDER BY
 	MAX(tip_amount) DESC
 LIMIT 1;
+```
 
-# Q7.
+## Q7.
 
-inserted the following in the variables.tf:
+updated variables.tf as follows:
 
+```
 variable "credentials" {
   description = "My Credentials"
   default     = "/workspaces/de-zoom-by-dimi/data-engineering-zoomcamp-dimi/01-docker-terraform/terrademo/keys/my-creds.json"
@@ -150,7 +167,10 @@ variable "gcs_storage_class" {
   description = "Bucket Storage Class"
   default     = "STANDARD"
 }
+```
 
 AND THEN
 
+```
 terraform apply
+```
