@@ -18,14 +18,18 @@ def transform(data, *args, **kwargs):
     data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date 
 
     print(data['VendorID'].unique()) # Q4
-    print(data.columns) # Q5
 
     new_cols=[]
+    count = 0
     for column in data.columns:
-        column = camel_to_snake(column)
-        new_cols.append(column)
 
+        if any(char.isupper() for char in column): 
+            column = camel_to_snake(column)
+            count+=1
+        new_cols.append(column)
+    print('No of camelcase columns:' , count) # Q5
     data.columns = new_cols
+    
     return data[(data['passenger_count'] > 0) & (data['trip_distance'] > 0.0)]
 
 @test
