@@ -10,7 +10,7 @@ Pre-reqs:
 2. Set GOOGLE_APPLICATION_CREDENTIALS to your project/service-account key
 3. Set GCP_GCS_BUCKET as your bucket or change default value of BUCKET
 """
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ="/workspaces/de-zoom-by-dimi/data-engineering-zoomcamp-dimi/04-analytics-engineering/my-04-hw-answers/mydezoomcamp2024-25ec95b1fde3.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] ="/workspaces/de-zoom-by-dimi/data-engineering-zoomcamp-dimi/03-data-warehouse/data-warehouse-zoomcamp/mydezoomcamp2024-0ab86610166c.json"
 
 # services = ['fhv','green','yellow']
 init_url = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/'

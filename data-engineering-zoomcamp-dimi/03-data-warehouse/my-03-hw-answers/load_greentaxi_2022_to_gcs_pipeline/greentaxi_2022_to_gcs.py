@@ -6,7 +6,7 @@ if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
 # Replace with the location of your service account key JSON file.
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/src/mydezoomcamp2024-25ec95b1fde3.json' 
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/src/mydezoomcamp2024-0ab86610166c.json'
 
 bucket_name = '03-warehouse-dimi'
 object_key = 'green_taxi_2022.parquet'
