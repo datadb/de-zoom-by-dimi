@@ -3,7 +3,6 @@
 ```
 Running dbt build, 
 we build the whole project with a default value 'true' >> applying a limit 100 << to the staging models,
-and affecting the core models that are based on the staging ones
 where the following lines appear
 
 {% if var('is_test_run', default=true) %}
