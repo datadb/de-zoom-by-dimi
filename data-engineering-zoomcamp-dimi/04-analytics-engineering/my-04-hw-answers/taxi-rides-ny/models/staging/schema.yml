@@ -14,7 +14,8 @@ sources:
          # freshness:
            # error_after: {count: 6, period: hour}
       # insert the fhv table here
-
+      - name: fhv_tripdata
+      
 models:
     - name: stg_green_tripdata
       description: >
@@ -199,3 +200,31 @@ models:
             description: Total amount of all tolls paid in trip.
           - name: Total_amount 
             description: The total amount charged to passengers. Does not include cash tips.
+
+    - name: stg_fhv_tripdata
+      description: ""
+      columns:
+        - name: dispatching_base_num
+          data_type: string
+          description: ""
+
+        - name: PUlocationID
+          data_type: int64
+          description: ""
+          tests:
+            - relationships:
+                field: locationid
+                to: ref('taxi_zone_lookup')
+                severity: warn
+            - not_null:
+                    severity: warn
+        - name: DOlocationID
+          data_type: int64
+          description: ""
+          tests:
+            - relationships:
+                field: locationid
+                to: ref('taxi_zone_lookup')
+                severity: warn
+            - not_null:
+                    severity: warn
