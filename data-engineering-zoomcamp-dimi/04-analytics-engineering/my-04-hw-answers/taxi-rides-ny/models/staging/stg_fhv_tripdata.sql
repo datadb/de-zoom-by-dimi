@@ -18,11 +18,10 @@ renamed as (
         dispatching_base_num,
         pickup_datetime,
         dropoff_datetime,
-        pulocationid,
-        dolocationid,
+        PUlocationID,
+        DOlocationID,
         sr_flag,
         affiliated_base_number
-
     from tripdata
 
 )

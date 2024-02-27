@@ -208,23 +208,26 @@ models:
           data_type: string
           description: ""
 
-        - name: PUlocationID
+        - name: pickup_datetime
+          data_type: timestamp
+          description: ""
+
+        - name: dropoff_datetime
+          data_type: timestamp
+          description: ""
+
+        - name: pulocationid
           data_type: int64
           description: ""
-          tests:
-            - relationships:
-                field: locationid
-                to: ref('taxi_zone_lookup')
-                severity: warn
-            - not_null:
-                    severity: warn
-        - name: DOlocationID
+
+        - name: dolocationid
           data_type: int64
           description: ""
-          tests:
-            - relationships:
-                field: locationid
-                to: ref('taxi_zone_lookup')
-                severity: warn
-            - not_null:
-                    severity: warn
+
+        - name: sr_flag
+          data_type: int64
+          description: ""
+
+        - name: affiliated_base_number
+          data_type: string
+          description: ""

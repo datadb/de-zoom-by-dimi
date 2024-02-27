@@ -49,6 +49,10 @@ models:
         data_type: string
         description: ""
 
+      - name: pickup_zone
+        data_type: string
+        description: ""
+
   - name: fact_trips
     description: >
       Taxi trips corresponding to both service zones (Green and yellow).
